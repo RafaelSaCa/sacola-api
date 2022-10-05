@@ -8,14 +8,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/ifood-devweek/sacolas")
 @RequiredArgsConstructor
 public class SacolaResource {
     private final SacolaService sacolaService;
 
     @PostMapping
-    public Item incluirItemNaSacola(ItemDto itemDto){
+    public Item incluirItemNaSacola(@RequestBody ItemDto itemDto){
       return sacolaService.incluirItemNaSacola(itemDto);
     }
 
